@@ -11,14 +11,15 @@ header{
 }
 
 .head{
-   width: 60%;
+   width: 800px;
    display: flex;
    border:1px solid black;
    flex-direction: row;
    padding:5px;
 }
 .logo{width: 200px; height: 100px;}
-.search{margin:auto 0;}
-input{width:300px;}
+.search{margin:auto 0; border:1px solid blue; margin-left:30px; display: flex;}
+input{outline: none; width:300px; height: 40px; margin:0;}
 .href_link{ margin-left: auto;}
 .day{width: 80px; height: 70px; margin-top:10px;}
+.search_icon{border:1px solid blue;}

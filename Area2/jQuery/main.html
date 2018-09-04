@@ -8,6 +8,18 @@
    <title>Hello</title>
 </head>
 <body>
-
+   <script>
+      $(document).ready(function(){
+            $("button").on("click", function(){
+               $("#me").hide();
+               $(".me").hide();
+               $("button").text("ON");
+            });
+      })
+   </script>
+   <button>OFF</button>
+   <p id="me">누르면 id인 저는 사라집니다.</p>
+   <p class="me">누르면 클래스인 저도 사라집니다.</p>
+   <p class="hi me">안녕</p>
 </body>
 </html>
