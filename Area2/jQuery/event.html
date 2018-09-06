@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <style>
+      p{
+         display:inline-block;
+         border:1px solid black;
+      }
+   </style>
+   <title>event</title>
+</head>
+<body>
+   <script>
+      $(document).ready(function(){
+         $("p.oneClick").click(function(){
+            alert('click!');
+         });
+         $("p.doubleClick").dblclick(function(){
+            alert("doubleClick!");
+         });
+         $("p.mouseEnter").mouseenter(function(){
+            alert("mouse Enter!");
+         });
+         $("p.mouseLeave").mouseleave(function(){
+            $("p#hide_P").hide();
+         });
+         $("p.mouseDown").mousedown(function(){
+            alert("mouseDown!");
+         });
+         $("p.mouseUp").mouseup(function(){
+            alert("mouseUp!");
+         });
+         $("p.hover").hover(function(){
+            alert("you entered here");
+         }, function(){
+            alert("you leave hover");
+         });
+         $("input.focus").focus(function(){
+            $(this).css("background-color", "#cccccc");
+         });
+         $("input.focus").blur(function(){
+            $(this).css("background-color", "yellow");
+         })
+      })
+   </script>
+   <p class="oneClick">클릭하세요</p>
+   <p class="doubleClick">더블클릭하세요.</p>
+   <p class="mouseEnter">마우스를 가져다 대면</p>
+
+   <p class="mouseLeave">이곳에서 벗어나면</p>
+   <p id="hide_P">안보인다.</p>
+
+   <p class="mouseDown">MouseDown</p>
+   <p class="mouseUp">MouseUp</p>
+   <p class="hover">Hover</p><br/>
+
+   <input type="text" class="focus" placeholder="focus here""/>
+</body>
+</html>
