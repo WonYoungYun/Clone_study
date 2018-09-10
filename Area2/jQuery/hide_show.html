@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Hide_Show</title>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            $("#hide_button").on("click", function(){
+                $("p").hide(1000);
+            });
+            $("#show_button").on("click", function(){
+                $("p").show(1000);
+            });
+            $("#toggle_button").on("click", function(){
+                $("#toggle_p").toggle(100);
+            });
+            $("#animate_button").on("click", function(){
+                $("#box").animate({height:"300px"});
+            })
+        })
+    </script>
+    <button id="hide_button">숨기기</button>
+    <button id="show_button">보이기</button>
+    <p>보일까 보이지 않을까</p><br/>
+    <button id="toggle_button">토글</button>
+    <p id="toggle_p">toggle</p>
+    <button id="animate_button">애니메이트</button><br/>
+    <p id="box" style="background-color:green; border:1px solid green;display: inline-block;">상자</p>
+
+</body>
+</html>
