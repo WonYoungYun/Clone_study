@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <script
+   src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <title>Animation</title>
+   <style>
+      .animate_div{
+         background-color: blue;
+         width: 100px;
+         height: 100px;
+         position: absolute;
+         margin:10px;
+      }
+   </style>
+</head>
+<body>
+   <script>
+      $(document).ready(function(){
+         $(".animate_btn").on("click", function(){
+            var div = $(".animate_div");
+            div.animate({
+               left:'250px',
+               opacity:'0.5',
+               width:'200px',
+               height:'+=100px'
+            }, 2000);
+            div.animate({
+               fontSize:'3em'
+            }, "slow");
+         });
+         $(".animateStop_btn").on("click", function(){
+            $(".animate_div").stop();
+         })
+      });
+   </script>
+   <button class="animate_btn">Animation</button>
+   <div class="animate_div">Hello!</div>
+   <button class="animateStop_btn">Stop</button>
+   positon이 absolute여야 사용가능
+</body>
+</html>

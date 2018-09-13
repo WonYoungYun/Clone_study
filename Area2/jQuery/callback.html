@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <script
+   src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <title>callback & chain</title>
+</head>
+<body>
+   <script>
+      $(document).ready(function(){
+         $("button").on("click", function(){
+            $("p").hide("slow", function(){
+               $("p").slideDown(2000);
+            });
+            $("div").css("color", "red").slideUp(2000).slideDown(2000);
+         })
+      })
+   </script>
+   <button>hide</button>
+   <p>hello</p>
+   <div>world</div>
+</body>
+</html>
