@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <script
+   src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <title>Sliding</title>
+   <style>
+   div{
+      width: 100px;
+      margin: 1px;
+      border:1px solid gray;
+   }
+   .slideDown_Area{
+      display: none;
+   }
+   </style>
+</head>
+<body>
+   <script>
+      $(document).ready(function(){
+         $(".slideDown_btn").on("click", function(){
+            $(".slideDown_Area").slideDown();
+         });
+         $(".slideUp_btn").on("click", function(){
+            $(".slideUp_Area").slideUp();
+         });
+         $(".slideToggle_btn").on("click", function(){
+            $(".slideToggle_Area").slideToggle();
+         });
+      })
+   </script>
+   <div class="slideDown_btn">Slide down</div>
+   <div class="slideDown_Area">Hello!</div>
+   <br/>
+   <div class="slideUp_btn">Slide Up</div>
+   <div class="slideUp_Area">Hello!</div>
+   <br/>
+   <div class="slideToggle_btn">Slide Toggle</div>
+   <div class="slideToggle_Area">Hello!!!</div>
+</body>
+</html>
