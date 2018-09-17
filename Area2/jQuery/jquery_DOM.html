@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>JQuery DOM</title>
+    <style>
+        div{
+            border:1px solid gray;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+    $(document).ready(function(){
+        $("#btn1").on("click", function(){
+            alert("Text: "+ $("#test").text());
+        });
+        $("#btn2").on("click", function(){
+            alert("HTML: "+ $("#test").html());
+        });
+        $("#btn3").on("click", function(){
+            alert("Value: "+ $("#test2").val());
+        });
+        $("#btn4").on("click", function(){
+            alert($("#w3s").attr("href"));
+        });
+        $("#set_btn1").on("click", function(){
+           $("#set_test").text("Hello World!");
+        });
+        $("#set_btn2").on("click", function(){
+             $("#set_test2").html("<b>Hello World</b>");
+        });
+        $("#set_btn3").on("click", function(){
+            $("#set_test3").val("JavaScript");
+        });
+        $("#set_btn4").on("click", function(){
+            $("#set_test4").attr("href", "http://www.w3schools.com/jquery");
+        })
+        $("#set_btn5").on("click", function(){
+           $("#set_test5").text(function(i,origText){
+               return "Old Text: " + origText + "new text: Hello Wolrd!(index: "+i+i+")";
+           });
+        });
+        $("#set_btn6").on("click", function(){
+             $("#set_test6").html(function(i, origText){
+                 return "Old html: " + origText + "New html: Hello<b>world!</b> (index: " + i +")";
+             });
+        });
+        $("#set_btn7").on("click", function(){
+             $("#set_test7").attr("href", function(i, origValue){
+                 return origValue + "/jquery";
+             });
+        });
+    }) ;  
+    </script>
+    <div>
+        <p id="test">This is some <b>bold</b> text </p>
+        <button id="btn1">Show Text</button>
+        <button id="btn2">Show HTML</button>
+
+        <p>Name: <input type="text" id="test2" value="JQUERY"/></p>
+        <button id="btn3">Show Value</button>
+
+        <p><a href="http://www.w3schools.com" id="w3s" target="_blank">W3Schools.com</a></p>
+        <button id="btn4">Show href Value</button>
+    </div>
+    <div>
+        <p id="set_test">This is some <b>bold</b> text </p>
+        <button id="set_btn1">Set Text</button>
+        <p id="set_test2">This is some <b>bold</b> text </p>
+        <button id="set_btn2">Set HTML</button>
+
+        <p>Name: <input type="text" id="set_test3" value="JQUERY"/></p>
+        <button id="set_btn3">Show Value</button>
+
+        <p><a href="http://www.w3schools.com" id="set_test4" target="_blank">W3Schools.com</a></p>
+        <button id="set_btn4">Change href Value</button>
+    </div>
+    <div>
+        <p id="set_test5">good morning!</p>
+        <button id="set_btn5">Show Old/New Text</button>
+        <p id="set_test6">good morning!</p>
+        <button id="set_btn6">Show Old/New Text</button>
+
+        <p><a href="http://www.w3schools.com" id="set_test7" target="_blank">W3Schools.com</a></p>
+        <button id="set_btn7">Change href Value</button>
+    </div>
+</body>
+</html>
