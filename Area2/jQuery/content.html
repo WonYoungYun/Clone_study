@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Content</title>
+    <style>
+        div{
+            border:1px solid black;
+            margin-bottom:10px;
+            padding:5px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            $("#append_btn1").on("click", function(){
+                $("#append_text").append("<b>Appended text</b>");
+            });
+            $("#append_btn2").on("click", function(){
+                $("#append_list").append("<li>Appended item</li>");
+            });
+            $("#prepend_btn1").on("click", function(){
+                $("#prepend_text").prepend("<b>Prepended text</b>");
+            });
+            $("#prepend_btn2").on("click", function(){
+                $("#prepend_list").prepend("<li>Prepended item</li>");
+            });
+            $("#before_btn").on("click", function(){
+                $("#ab_text").before("<b>This</b>");
+            });
+            $("#after_btn").on("click", function(){
+                $("#ab_text").after("<p><i>Pen</i></p>");
+            });
+            $("#remove_btn").on("click", function(){
+                $("#remove_area").remove();
+            });
+            $("#empty_btn").on("click", function(){
+                $("#remove_area").empty();
+            });
+            $("#remove_btn2").on("click", function(){
+                $("p").remove("#remove_text2");
+            });
+        });
+
+        function appendText(){
+            var txt1 = "<p>Text.</p>";
+            var txt2 = $("<p></p>").text("Text.");
+            var txt3 = document.createElement("p");
+            txt3.innerHTML = "Text.";
+            $("body").append(txt1, txt2, txt3);
+        }
+    </script>
+    <div>
+        <p id="append_text">Hi EveryBody! </p>
+        <ol id="append_list">
+            <li>List1</li>
+            <li>List2</li>
+        </ol>
+        <button id="append_btn1">Append Text</button>
+        <button id="append_btn2">Append Item</button>
+    </div>
+    <div>
+        <p id="prepend_text">Hi EveryBody! </p>
+        <ol id="prepend_list">
+            <li>List1</li>
+            <li>List2</li>
+        </ol>
+        <button id="prepend_btn1">Prepend Text</button>
+        <button id="prepend_btn2">Prepend Item</button>
+    </div>
+    <div>
+        <p id="ab_text">is a </p>
+        <button id="before_btn">Insert before</button>
+        <button id="after_btn">Insert after</button>
+    </div>
+    <div id="remove_area">
+        <p id="remove_text1">Hi <i>EveryBody!</i></p>
+        <p id="remove_text2">See you next time</p>
+        <button id="remove_btn">Remove div element</button>
+        <button id="empty_btn">Empty div element</button>
+        <button id="remove_btn2">Remove bold</button>
+    </div>
+    <button onclick="appendText()">Append Text</button>
+</body>
+</html>
