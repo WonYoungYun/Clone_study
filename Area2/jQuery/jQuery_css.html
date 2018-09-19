@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>jQuery_CSS</title>
+
+    <style>
+        .important{
+            font-weight: bold;
+            font-size:xx-large;
+        }
+        .blue{
+            color:blue;
+        }
+        section{
+            border:1px solid black;
+            margin-bottom: 10px;
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            $("#addClass_btn").on("click",function(){
+                $("h1,h2,p").addClass("blue");
+                $("div").addClass("important");
+                $("#div1").addClass("important blue");
+            });
+            $("#removeClass_btn").on("click", function(){
+                $("h1,h2,p").removeClass("blue");
+                $("div").removeClass("important");
+                $("#div1").removeClass("important blue");
+            });
+            $("#toggleClass_btn").on("click", function(){
+                $("#div2").toggleClass("blue");
+            });
+            $("#css_btn").on("click", function(){
+                $("#css_p").css({"background-color":"yellow","font-size":"200%"});
+            })
+        });
+    </script>
+    <section>
+        <h1>Head1</h1>    
+        <h2>head2</h2>
+        <p>Hello World!</p>
+        <div>Hello World!</div>
+        <div id="div1">Hello World!</div>
+        <button id="addClass_btn">Add Class</button>
+        <button id="removeClass_btn">Remove Class</button>
+    </section>
+    <section>
+        <div id="div2">Hello World!</div>
+        <button id="toggleClass_btn">Toggle Class</button>
+    </section>
+    <section>
+        <p id="css_p" style="background-color:#ff0000">Hello World!</p>
+        <button id="css_btn">Return background-color of p</button>
+    </section>
+</body>
+</html>
