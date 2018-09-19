@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        .ancestors *{
+            display: block;
+            border:2px solid lightgrey;
+            color:lightgrey;
+            padding:5px;
+            margin:15px;
+        }
+    </style>
+    <title>Traversing1</title>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            $("#parent_span").parent().css({"color":"red", "border":"2px solid red"});
+            $("#parents_span").parents("div").css({"color":"red", "border":"2px solid red"});
+            $("#parentsUntill_span").parentsUntil("#untillSection").css({"color":"red", "border":"2px solid red"});
+            $("#childrenSection").children("#children1").css({"color":"red", "border":"2px solid red"});
+            $("#find").find("span").css({"color":"red", "border":"2px solid red"});
+        });
+    </script>
+    <div class="ancestors">
+        <div style="width:500px;">div (great-grandparent)
+            <ul>ul(grandparent)
+                <li>li(direct parent)
+                    <span id="parent_span">span</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="ancestors">        
+        <div style="width:500px;">div(great-grandparent)
+                <p>p(direct parent)
+                    <span id="parents_span">span</span>
+                </p>
+        </div>
+    </div>
+    <div class="ancestors">
+        <section id="untillSection">
+            <div style="width:500px;">div(great-grandparent)
+                    <p>p(direct parent)
+                        <span id="parentsUntill_span">span</span>
+                    </p>
+            </div>
+        </section>
+    </div>
+    <div class="ancestors">
+        <div  id="childrenSection" style="width:500px;">div(great-grandparent)
+                <p id="children1">p(direct parent)
+                    <span>span</span>
+                </p>
+                <p id="children2">p</p>
+        </div>
+    </div>
+    <div class="ancestors">
+        <div  id="find" style="width:500px;">div(great-grandparent)
+                <p>p(direct parent)
+                    <span>span</span>
+                </p>
+        </div>
+    </div>
+</body>
+</html>
